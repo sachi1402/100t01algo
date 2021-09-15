@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Algo from "./algo";
+import "./App.css";
+import { React, useState, useEffect } from "react";
 function App() {
+  const [numberOfPeoples, setnumberOfPeoples] = useState([]);
+  const [instialSwordholder, setinstialSwordholder] = useState(10);
+  const [total, settotal] = useState(10)
+  function arraymaker(s) {
+    let arr = [];
+    for (let i = 0; i < s; i++) {
+      arr[i] = i;
+    }
+    setnumberOfPeoples(arr);
+    settotal(s);
+    
+  }
+  function swordholder(x) {
+    setinstialSwordholder(x);
+  }
+  useEffect(() => {
+    arraymaker(15);
+    swordholder(9);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <Algo peoples={numberOfPeoples} swordholder={instialSwordholder}  total={total}/>
     </div>
   );
 }

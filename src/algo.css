@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    justify-content: center;
+    
+}
+.box{
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+}
+.innerbox{
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 10%;
+}
+#redbg{
+    background-color: red;
+}
